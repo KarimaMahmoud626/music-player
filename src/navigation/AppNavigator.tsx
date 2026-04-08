@@ -6,31 +6,26 @@ import LibraryScreen from "../screens/Library/LibraryScreen";
 import NowPlayingScreen from "../screens/NowPlaying/NowPlayingScreen";
 import DrawerNavigator from "./DrawerNavigator";
 
-const Stack = createNativeStackNavigator({
-  screens: {
-    Login: {
-      screen: LoginScreen,
-      options: { headerShown: false },
-    },
-    SignUp: {
-      screen: SignUpScreen,
-      options: { headerShown: false },
-    },
-    // MainApp: {
-    //   screen: DrawerNavigator,
-    //   options: { headerShown: false },
-    // },
-    NowPlaying: {
-      screen: NowPlayingScreen,
-      options: { headerShown: false },
-    },
-    Library: {
-      screen: LibraryScreen,
-      options: { headerShown: false },
-    },
-  },
-});
+export type MainStack = {
+  Login: undefined;
+  SignUp: undefined;
+  Library: undefined;
+  NowPlaying: undefined;
+  Drawer: undefined;
+};
 
-const AppNavigator = createStaticNavigation(Stack);
+const Stack = createNativeStackNavigator<MainStack>();
+
+const AppNavigator = () => {
+  return (
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="Login" component={LoginScreen} />
+      <Stack.Screen name="SignUp" component={SignUpScreen} />
+      <Stack.Screen name="Library" component={LibraryScreen} />
+      <Stack.Screen name="NowPlaying" component={NowPlayingScreen} />
+      <Stack.Screen name="Drawer" component={DrawerNavigator} />
+    </Stack.Navigator>
+  );
+};
 
 export default AppNavigator;
