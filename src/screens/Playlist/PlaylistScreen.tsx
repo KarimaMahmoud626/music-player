@@ -1,9 +1,10 @@
 import { View, Text } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function PlaylistScreen() {
   return (
-    <View>
+    <SafeAreaView>
       <Text>Playlist</Text>
-    </View>
+    </SafeAreaView>
   );
 }
