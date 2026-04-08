@@ -3,8 +3,8 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function NowPlayingScreen() {
   return (
-    <SafeAreaView>
+    <View>
       <Text>NowPlaying</Text>
-    </SafeAreaView>
+    </View>
   );
 }

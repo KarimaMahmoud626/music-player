@@ -4,7 +4,6 @@ import LikedSongsScreen from "../screens/LikedSongs/LikedSongsScreen";
 import PlaylistScreen from "../screens/Playlist/PlaylistScreen";
 import { useThemeColor } from "../hooks/use-theme-color";
 import Ionicons from "@react-native-vector-icons/ionicons";
-import { View } from "react-native";
 
 export type drawerType = {
   Home: undefined;
