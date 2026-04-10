@@ -9,6 +9,7 @@ export type LikeSongButtonProps = ViewProps & {
   alternativeIcon: any;
   onPress?: undefined;
   isPressed?: boolean;
+  iconSize?: number;
 };
 
 export default function IconButton({
@@ -17,6 +18,7 @@ export default function IconButton({
   isPressed,
   iconName,
   alternativeIcon,
+  iconSize = 20,
   lightColor,
   darkColor,
 }: LikeSongButtonProps) {
@@ -29,7 +31,7 @@ export default function IconButton({
       <TouchableOpacity onPress={onPress}>
         <Ionicons
           name={isPressed ? iconName : alternativeIcon}
-          size={20}
+          size={iconSize}
           color={iconColor}
         />
       </TouchableOpacity>

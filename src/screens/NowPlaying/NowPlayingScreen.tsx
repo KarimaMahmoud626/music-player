@@ -2,6 +2,9 @@ import { StyleSheet, View } from "react-native";
 import NowPlayingSongCard from "../../components/ui/NowPlayingSongCard";
 import SongPlayBackButtons from "../../components/ui/SongPlayBackButtons";
 import { ThemedView } from "../../components/themed-view";
+import PlayingSongProgressBar from "../../components/ui/PlayingSongProgressBar";
+import NowPlayingSongTimeLabels from "../../components/ui/NowPlayingSongTimeLabels";
+import SongPlayControlButtons from "../../components/ui/SongPlayControlButtons";
 
 export default function NowPlayingScreen() {
   return (
@@ -11,6 +14,12 @@ export default function NowPlayingScreen() {
       />
       <View style={{ height: 40 }} />
       <SongPlayBackButtons />
+      <View style={{ height: 60 }} />
+      <NowPlayingSongTimeLabels position={120} duration={240} />
+      <View style={{ height: 8 }} />
+      <PlayingSongProgressBar position={120} duration={240} />
+      <View style={{ height: 40 }} />
+      <SongPlayControlButtons />
     </ThemedView>
   );
 }

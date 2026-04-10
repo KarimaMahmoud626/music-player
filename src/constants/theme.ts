@@ -18,7 +18,7 @@ export const Colors = {
     tabIconDefault: "#687076",
     tabIconSelected: tintColorLight,
     inputBackground: "#FAF0EE",
-    progressTrack: "#E8F5E9",
+    progressTrack: "#091227",
     surface: "#FFFFFF",
   },
   dark: {
