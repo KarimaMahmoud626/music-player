@@ -1,6 +1,6 @@
 import Ionicons from "@react-native-vector-icons/ionicons";
 import { useNavigation } from "@react-navigation/native";
-import { TouchableOpacity, Text, StyleSheet } from "react-native";
+import { TouchableOpacity, Text, StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useThemeColor } from "../../hooks/use-theme-color";
 
@@ -18,7 +18,7 @@ export default function ScreenHeader({
   const color = useThemeColor({ light: lightColor, dark: darkColor }, "text");
   const navigate = useNavigation();
   return (
-    <SafeAreaView style={styles.header}>
+    <View style={styles.header}>
       <TouchableOpacity
         onPress={() => navigate.goBack()}
         style={styles.backButton}
@@ -26,7 +26,7 @@ export default function ScreenHeader({
         <Ionicons name="arrow-back-outline" size={24} color={color} />
       </TouchableOpacity>
       <Text style={[styles.title, { color: color }]}>{screenName}</Text>
-    </SafeAreaView>
+    </View>
   );
 }
 
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     paddingHorizontal: 8,
-    paddingVertical: 16,
+    paddingVertical: 32,
   },
   backButton: {
     flex: 1,
