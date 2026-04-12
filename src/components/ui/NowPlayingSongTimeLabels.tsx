@@ -11,24 +11,16 @@ export default function NowPlayingSongTimeLabels({
   position,
   duration,
 }: NowPlayingSongTimeLabelsProps) {
-  //   const formatTime = (time: number) => {
-  //     return format(new Date(time * 1000), "mm:ss");
-  //   };
+  const formatTime = (seconds: number): string => {
+    const mins = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    return `${mins}:${secs < 10 ? "0" : ""}${secs}`;
+  };
 
   return (
     <View style={styles.container}>
-      {/* <Text>{formatTime(position)}</Text>
-      <Text>{formatTime(duration)}</Text> */}
-      <Text style={styles.text}>
-        {position >= 0
-          ? `${Math.floor(position / 60)}:${String(Math.floor(position % 60)).padStart(2, "0")}`
-          : "0:00"}
-      </Text>
-      <Text style={styles.text}>
-        {duration >= 0
-          ? `${Math.floor(duration / 60)}:${String(Math.floor(duration % 60)).padStart(2, "0")}`
-          : "0:00"}
-      </Text>
+      <Text style={styles.text}>{formatTime(position)}</Text>
+      <Text style={styles.text}>{formatTime(duration)}</Text>
     </View>
   );
 }

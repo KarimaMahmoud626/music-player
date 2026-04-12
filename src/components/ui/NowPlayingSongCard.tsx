@@ -6,10 +6,14 @@ import { Colors } from "../../constants/theme";
 export type NowPlayingSongCardProps = {
   imageSource: undefined;
   isLiked?: boolean;
+  songName: string;
+  artistName: string;
 };
 
 export default function NowPlayingSongCard({
   imageSource,
+  songName,
+  artistName,
   isLiked,
 }: NowPlayingSongCardProps) {
   return (
@@ -17,8 +21,8 @@ export default function NowPlayingSongCard({
       <NowPlayingSongImage imageSource={imageSource} />
       <View style={styles.row}>
         <View style={styles.textContainer}>
-          <Text style={[styles.songName]}>Moment Apart</Text>
-          <Text style={[styles.atistName]}>Odesza</Text>
+          <Text style={[styles.songName]}>{songName}</Text>
+          <Text style={[styles.artistName]}>{artistName}</Text>
         </View>
         <View>
           <LikeSongButton
@@ -54,7 +58,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
   },
-  atistName: {
+  artistName: {
     marginTop: 6,
     fontFamily: "Gilroy",
     fontWeight: "400",
