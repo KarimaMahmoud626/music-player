@@ -11,17 +11,19 @@ const tintColorDark = "#fff";
 export const Colors = {
   light: {
     text: "#130F26",
+    subText: "#8996B8",
     background: "#F7FAFF",
     tint: tintColorLight,
-    icon: "#8996B8",
+    icon: "#555B6A",
     tabIconDefault: "#687076",
     tabIconSelected: tintColorLight,
     inputBackground: "#FAF0EE",
-    progressTrack: "#E8F5E9",
+    progressTrack: "#091227",
     surface: "#FFFFFF",
   },
   dark: {
     text: "#ECEDEE",
+    subText: "#8996B8",
     background: "#151718",
     tint: tintColorDark,
     icon: "#9BA1A6",
